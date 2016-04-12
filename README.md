@@ -36,3 +36,12 @@ How to Use
     }
 ```
 
+ScreenShot
+-----------
+**Spinner with default prompt**<br/>
+![](app/src/main/assets/spinner.png)
+
+<br/><br/>
+**Spinner with custom prompt**<br/>
+![](app/src/main/assets/spinner-prompt.png)
+

@@ -63,15 +63,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void initListCountry(){
-        String[] array = getResources().getStringArray(R.array.array_country);
-
-        ArrayList<Map.Entry<String,String>> arrayList = new ArrayList<>();
-        for (String str:array) {
-            String[] ary_split = str.split(",");
-            arrayList.add(new AbstractMap.SimpleEntry<>(ary_split[0], ary_split[1]));
-        }
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
