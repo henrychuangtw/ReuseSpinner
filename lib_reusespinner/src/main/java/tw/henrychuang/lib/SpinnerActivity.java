@@ -84,25 +84,24 @@ public class SpinnerActivity extends Activity {
                 View view = super.getDropDownView(position, convertView, parent);
 
                 TextView tv = (TextView) view;
-                if(position == 0) {
-                    Drawable drawable;
-
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        drawable = mContext.getDrawable(R.drawable.borderbottom);
-                    } else {
-                        drawable = mContext.getResources().getDrawable(R.drawable.borderbottom);
-                    }
-
-                    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                        tv.setBackground(drawable);
-                    } else {
-                        tv.setBackgroundDrawable(drawable);
-                    }
-
+                if(tv.getText().toString().equalsIgnoreCase(mSelectOne)){
                     tv.setTextColor(Color.GRAY);
+
+                    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+                        Drawable drawable;
+                        drawable = mContext.getDrawable(R.drawable.borderbottom);
+                        tv.setBackground(drawable);
+                    }
+
                 }else {
                     tv.setTextColor(Color.BLACK);
+                    if (Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                        tv.setBackground(null);
+                    } else {
+                        tv.setBackgroundDrawable(null);
+                    }
                 }
+
                 return view;
             }
 
