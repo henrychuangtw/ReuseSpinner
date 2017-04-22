@@ -150,9 +150,16 @@ public class SpinnerActivity extends Activity {
             }
         });
 
-        mSpinner.performClick();
+
 
     }
 
+    @Override
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        Log.d(TAG, "onAttachedToWindow");
+
+        mSpinner.performClick();
+    }
 
 }

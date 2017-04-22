@@ -76,15 +76,16 @@ public class CustomSpinner extends Spinner {
         return mOpenInitiated;
     }
 
+    //Activity窗口获得或失去焦点时被调用,在onResume之后或onPause之后
     @Override
     public void onWindowFocusChanged(boolean hasWindowFocus) {
         android.util.Log.d(TAG, "onWindowFocusChanged");
         super.onWindowFocusChanged(hasWindowFocus);
 
-        if (hasBeenOpened() && hasWindowFocus) {
-            android.util.Log.i(TAG, "closing popup");
-            performClosedEvent();
-        }
+//        if (hasBeenOpened() && hasWindowFocus) {
+//            android.util.Log.i(TAG, "closing popup");
+//            performClosedEvent();
+//        }
 
     }
 
