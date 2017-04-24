@@ -3,7 +3,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 
-version = "0.4"	//aar的版本号
+version = "1.0.1"	//aar的版本号
 
 android {
     compileSdkVersion 23
@@ -12,7 +12,7 @@ android {
         minSdkVersion 12
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.1"
     }
     buildTypes {
         release {
@@ -31,12 +31,13 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:design:23.3.0'
 }
 
 
 def siteUrl = 'https://github.com/henrychuangtw/ReuseSpinner'    // 项目主页
 def gitUrl = 'https://github.com/henrychuangtw/ReuseSpinner.git' // 项目的git地址
-def module_name = 'lib_reusespinner'	// 项目的名称
+def module_name = 'ReuseSpinner'	// 项目的名称
 group = 'tw.henrychuang.lib'	// 所在组
 
 install {
@@ -45,7 +46,7 @@ install {
         pom {
             project {
                 packaging 'aar'
-                name 'henrytest' // 名称
+                name 'ReuseSpinner' // 名称
                 url siteUrl
                 licenses {
                     license {
@@ -94,7 +95,7 @@ bintray {
     key = properties.getProperty("bintray.apikey")
     configurations = ['archives']
     pkg {
-        repo = "ReuseSpinner"		// 你在bintray上创建的库的名称
+        repo = "Utils"		// 你在bintray上创建的库的名称
         name = module_name               // 在jcenter中的项目名称
         websiteUrl = siteUrl
         vcsUrl = gitUrl

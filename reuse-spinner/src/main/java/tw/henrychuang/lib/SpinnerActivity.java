@@ -155,11 +155,19 @@ public class SpinnerActivity extends Activity {
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Log.d("henrytest", "onBackPressed");
+    }
+
+    @Override
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
         Log.d(TAG, "onAttachedToWindow");
 
         mSpinner.performClick();
     }
+
+
 
 }

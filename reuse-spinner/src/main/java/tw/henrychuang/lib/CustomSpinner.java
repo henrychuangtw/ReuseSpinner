@@ -3,16 +3,30 @@ package tw.henrychuang.lib;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.Spinner;
+import android.support.v7.widget.AppCompatSpinner;
+import android.util.Log;
+import android.view.MotionEvent;
 
 
-public class CustomSpinner extends Spinner {
+public class CustomSpinner extends AppCompatSpinner {
     private static final String TAG = "CustomSpinner";
     private OnSpinnerEventsListener mListener;
     private boolean mOpenInitiated = false;
 
     public CustomSpinner(Context context, AttributeSet attrs, int defStyleAttr, int mode) {
         super(context, attrs, defStyleAttr, mode);
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        Log.d("henrytest", "onDetachedFromWindow");
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+
+        return super.onTouchEvent(event);
     }
 
     public CustomSpinner(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -80,12 +94,14 @@ public class CustomSpinner extends Spinner {
     @Override
     public void onWindowFocusChanged(boolean hasWindowFocus) {
         android.util.Log.d(TAG, "onWindowFocusChanged");
+
+        if (hasBeenOpened() && hasWindowFocus) {
+            android.util.Log.i(TAG, "closing popup");
+            performClosedEvent();
+        }
+
         super.onWindowFocusChanged(hasWindowFocus);
 
-//        if (hasBeenOpened() && hasWindowFocus) {
-//            android.util.Log.i(TAG, "closing popup");
-//            performClosedEvent();
-//        }
 
     }
 
