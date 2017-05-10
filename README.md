@@ -2,6 +2,24 @@ ReuseSpinner
 One spinner for your app. Prompt for spinner hint, like "Select One".
 <br/><br/>
 
+Installation
+-----------
+Gradle
+```Java
+compile 'tw.henrychuang.lib:reuse-spinner:1.0.1'
+```
+Maven
+```Java
+<dependency>
+  <groupId>tw.henrychuang.lib</groupId>
+  <artifactId>reuse-spinner</artifactId>
+  <version>1.0.1</version>
+  <type>pom</type>
+</dependency>
+```
+
+<br/>
+
 How to Use
 -----------
 1.Import module **lib_commonspinner**
@@ -36,12 +54,20 @@ How to Use
     }
 ```
 
+<br/>
+
 ScreenShot
 -----------
 **Spinner with default prompt**<br/>
 ![](app/src/main/assets/spinner.png)
 
-<br/><br/>
+<br/>
 **Spinner with custom prompt**<br/>
 ![](app/src/main/assets/spinner-prompt.png)
 
+<br/>
+
+License
+-------
+Apache License Version 2.0
+http://apache.org/licenses/LICENSE-2.0.txt
